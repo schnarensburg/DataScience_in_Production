@@ -7,6 +7,10 @@ from sklearn.preprocessing import StandardScaler
 from keras.wrappers.scikit_learn import KerasRegressor
 from sklearn.metrics import r2_score
 
+'''
+Build a Neural Network for the reany output values, forecasting performance of the gear data based on geometric data
+'''
+
 # Load data from CSV
 in_dir = os.path.dirname(os.path.abspath(__file__))
 folder_path = os.path.join(in_dir, '../../01_DATA/Z19/Z19 Datensammlung_Processed.csv')

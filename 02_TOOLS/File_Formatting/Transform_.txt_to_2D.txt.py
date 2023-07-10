@@ -1,6 +1,9 @@
 import os
 import csv
 
+'''
+Generating a two dimensional txt file by ignoring the y coordinates, so basically compressing the gear into two dimensions
+'''
 def remove_y(data):
     return [[x, z] for x, y, z in data]
 

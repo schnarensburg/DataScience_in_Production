@@ -5,6 +5,9 @@ import os
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 
+'''
+Implementing a GradienBoostingRegression to detect patterns within the data allowing forecasts
+'''
 def gradientBoostingRegressor(Y_data):
 
     # Load data from CSV

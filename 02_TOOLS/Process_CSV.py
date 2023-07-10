@@ -2,6 +2,10 @@ import csv
 import os.path
 import pandas as pd
 
+'''
+Processing a csv file, changing delimiter to ',' and reformat data with 'strip()'
+'''
+
 def convert_csv_format(input_file, output_file):
     with open(input_file, 'r') as file:
         reader = csv.reader(file, delimiter=';')

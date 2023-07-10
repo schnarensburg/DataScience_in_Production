@@ -1,5 +1,9 @@
 import os
 
+'''
+Transforming a xyz file into a txt file
+'''
+
 def transfrom_xyz_to_txt(input, output):
     with open(input, 'r') as xyz_file, open(output, 'w') as txt_file:
         for line in xyz_file:

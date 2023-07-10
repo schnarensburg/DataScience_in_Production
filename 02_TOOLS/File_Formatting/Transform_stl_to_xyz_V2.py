@@ -2,6 +2,10 @@ import os
 from stl import mesh
 import numpy as np
 
+'''
+Transforming a stl file (CAD format) into a xyz format for further processing
+'''
+
 def stl_to_xyz(stl_file):
     # Load the STL file
     mesh_data = mesh.Mesh.from_file(stl_file)
@@ -17,5 +21,5 @@ def stl_to_xyz(stl_file):
     print(f"XYZ file saved: {xyz_file}")
 
 # Usage example
-stl_file_path = '/Users/aaronneumann/Documents/GitHub/TeamprojektDataScience/01_DATA/Z13/PointClouds/cutCAD_Z13.xyz'
+stl_file_path = '../../01_DATA/Z13/cutCAD_Z13.xyz'
 stl_to_xyz(stl_file_path)

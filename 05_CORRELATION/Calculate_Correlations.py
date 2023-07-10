@@ -4,7 +4,9 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-
+'''
+Calculating the correlation between any value (geometric measurements and reany results)
+'''
 def calculate_correlations(file_path, var1, var2):
     # Load data from excel
     df = pd.read_excel(file_path)
@@ -39,7 +41,7 @@ def calculate_correlations(file_path, var1, var2):
 
 
 dir_in = os.path.dirname(os.path.abspath(__file__))
-folder_path = os.path.join(dir_in, '../01_DATA/Z19/Test File/Z19 Datensammlung.xlsx')
+folder_path = os.path.join(dir_in, '../07_RESULTS/Z19_Data_Processed.csv')
 calculate_correlations(folder_path, 'Max_Deviation', "fi' li")
 
 
