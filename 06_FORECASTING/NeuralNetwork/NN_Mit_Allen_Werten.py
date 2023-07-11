@@ -13,7 +13,7 @@ Build a Neural Network for the reany output values, forecasting performance of t
 
 # Load data from CSV
 in_dir = os.path.dirname(os.path.abspath(__file__))
-folder_path = os.path.join(in_dir, '../../01_DATA/Z19/Z19 Datensammlung_Processed.csv')
+folder_path = os.path.join(in_dir, '../../07_RESULTS/Z19_Data_Processed.csv')
 data = pd.read_csv(folder_path)
 X = data[['Mean', ' Outer Edge Length', ' Surface', 'Variance', 'Max_Deviation', 'Min_Deviation']].values
 Y = data[["F'i re", "fl' re",  "fk' re", "fi' re", "F'i li", "fl' li", "fk' li", "fi' li"]].values

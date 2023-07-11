@@ -15,7 +15,7 @@ gast==0.4.0
 google-auth==2.21.0
 google-auth-oauthlib==1.0.0
 google-pasta==0.2.0
-grpcio==1.56.0
+grpcio==1.49.1
 h5py==3.9.0
 idna @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_00jf0h4zbt/croot/idna_1666125573348/work
 joblib @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_dfriz0qjwt/croot/joblib_1685113297703/work
@@ -47,6 +47,7 @@ pytz==2023.3
 requests @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ec2sxfa_zk/croot/requests_1682607519671/work
 requests-oauthlib==1.3.1
 rsa==4.9
+scikeras==0.11.0
 scikit-learn @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_815xfdnpoa/croot/scikit-learn_1680198756636/work
 scipy==1.10.1
 six==1.16.0
