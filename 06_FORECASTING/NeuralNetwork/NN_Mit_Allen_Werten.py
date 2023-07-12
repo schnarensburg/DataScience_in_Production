@@ -72,7 +72,31 @@ for i, model in enumerate(models):
     r2 = r2_score(Y_scaled[:, i], Y_scaled_pred)
     metrics.append([loss, r2])
 
-
 print("Overall Mean Squared Error:", np.mean([sub_array[0] for sub_array in metrics]))
 print("Overall Mean R2 score: ", np.mean([sub_array[1] for sub_array in metrics]))
 print(metrics)
+
+def prediction_trial(models, index, pointcloud):
+    model = models[index]
+
+    data = pd.read_csv(pointcloud)
+    X = data[['Mean', ' Outer Edge Length', ' Surface', 'Variance', 'Max_Deviation', 'Min_Deviation']].values
+    Y = data[["F'i re", "fl' re", "fk' re", "fi' re", "F'i li", "fl' li", "fk' li", "fi' li"]].values
+
+    # Scale data
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    Y_scaled = scaler.fit_transform(Y)
+
+    prediction_scaled = model.predict(X_scaled)
+    prediction = scaler.inverse_transform(Y_scaled)
+
+    formatted_pred = ["Wälzfehler rechts: ", prediction[0][0], "Wälzfehler links: ", prediction[0][4]]
+
+    print(f"Beispielvorhersage durch Neural Network:\n "
+          f"{formatted_pred[0]} {formatted_pred[1]} \n "
+          f"{formatted_pred[2]} {formatted_pred[3]}")
+
+pointcloud_geometric_data = '../../07_RESULTS/example_data.csv'
+prediction_trial(models, 6, pointcloud_geometric_data)
+

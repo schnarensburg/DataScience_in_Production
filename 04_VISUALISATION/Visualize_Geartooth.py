@@ -21,23 +21,26 @@ def isolate_teeth(gear_data, num_teeth):
             #Check if the angle falls within the tooth's range
             if start_angle <= angle < end_angle:
                 tooth_data.append(data_point)
+        teeth_data.append(tooth_data)
     return teeth_data
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(script_dir, "../01_DATA/Z19/PointClouds/2dimZ19CAD.txt")
-gear_data = np.loadtxt(file_path, delimiter=',')
+def visualize(teeth_data, index):
+    data = teeth_data[index]
 
-num_teeth = 13
+    # Extract x and y coordinates from the data
+    x_data = [point[0] for point in data]
+    y_data = [point[1] for point in data]
+    plt.scatter(x_data, y_data)
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+
+    plt.show()
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, "../01_DATA/Z19/cutCAD_2D_Z19.txt")
+gear_data = np.loadtxt(file_path)
+
+num_teeth = 19
 
 teeth_data = isolate_teeth(gear_data, num_teeth)
-
-for i, tooth_data in enumerate(teeth_data):
-    x_values = tooth_data[:, 0]
-    y_values = tooth_data[:, 1]
-
-    plt.plot(x_values, y_values, label=f'Tooth {i+1}')
-
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title('Isolated Teeth')
-plt.show()
+visualize(teeth_data, 0)
