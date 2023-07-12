@@ -6,6 +6,7 @@ from sklearn.model_selection import cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler
 from keras.wrappers.scikit_learn import KerasRegressor
 from sklearn.metrics import r2_score
+from keras.utils import plot_model
 
 '''
 Build a Neural Network for the reany output values, forecasting performance of the gear data based on geometric data
